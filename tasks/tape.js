@@ -7,21 +7,28 @@ module.exports = function (grunt) {
 		var src = this.data.src;
 		var options = this.options();
 		var sizes_store = options.version;
+		var collect_data = options.collectData;
+		var sma = options.printSMA;
 		
-		// was version passed?
-		if(!sizes_store){
-			grunt.fail.fatal("sizes file was not passed, please specify it.");
-		}
-		
-		// check if version file exists
-		if(!grunt.file.exists(sizes_store)){
-			grunt.fail.fatal("sizes file does not exist, please create an empty file.");
-		}
+		if(collect_data){
+			// was sizes file passed?
+			if(!sizes_store){
+				grunt.fail.fatal("sizes file was not passed, please specify it.");
+			}
+			
+			// check if version file exists
+			if(!grunt.file.exists(sizes_store)){
+				grunt.fail.fatal("sizes file does not exist, please create an empty file.");
+			}
 
-		// find files to process
-		grunt.file.recurse(src, function(abspath) {
-			statFile(abspath, sizes_store);
-		});
+			// find files to process
+			grunt.file.recurse(src, function(abspath) {
+				statFile(abspath, sizes_store);
+			});
+		}
+		else{
+			
+		}
 	});
 	
 	// recursively search the directory for files and return the mtime for each
