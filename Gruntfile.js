@@ -22,7 +22,7 @@ module.exports = function(grunt) {
       js: {
         src: 'tasks/',
         options: {
-        	version: 'version.json'
+					version: 'version.json'
         }
       }
     }
