@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/kmulvey/grunt-tape.svg?branch=master)](https://travis-ci.org/kmulvey/grunt-tape)
+[![Build Status](https://travis-ci.org/kmulvey/grunt-beaker.svg?branch=master)](https://travis-ci.org/kmulvey/grunt-beaker)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-Grunt Tape
+Grunt Beaker
 ==========
 
 Measuring tape for your code.
