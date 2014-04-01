@@ -76,8 +76,8 @@ module.exports = function (grunt) {
 		sizes_data[path.extname(file_path).replace('.','')][path.basename(file_path)].push(time_obj);
 		fs.writeFileSync(sizes_file_path, JSON.stringify(sizes_data), 'utf8');
 	}
-	function calcSMA(sma, sizes_data, key){
-		sizes_data = sizes_data[key];
+	function calcSMA(sma, sizes_data, type_key){
+		sizes_data = sizes_data[type_key];
 	
 		// loop each file
 		for (var key in sizes_data) {
@@ -86,9 +86,8 @@ module.exports = function (grunt) {
 			var sizes_tot = 0;
 			for(var i = sizes_arr.length-1; i >= sizes_arr.length-sma; i--){
 				sizes_tot += sizes_arr[i].size;
-			grunt.log.writeln(sizes_arr[i].size);
 			}
-			grunt.log.writeln(sizes_tot/sma);
+			grunt.log.writeln(key + ': ' + sizes_tot/sma);
 		}
 	}
 };
