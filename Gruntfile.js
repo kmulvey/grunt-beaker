@@ -25,6 +25,14 @@ module.exports = function(grunt) {
 					collectData: true,
 					version: 'version.json'
         }
+      },
+      calc: {
+        src: 'tasks/',
+        options: {
+					sma: 5,
+					key: 'js',
+					version: 'version.json'
+        }
       }
     }
 

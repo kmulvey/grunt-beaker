@@ -8,10 +8,11 @@ module.exports = function (grunt) {
 		var options = this.options();
 		var sizes_store = options.version;
 		var collect_data = options.collectData;
-		var sma = options.printSMA;
+		var sma = options.sma;
+		var sma_key = options.key;
 		
 		var sizes_data = null;
-
+		
 		// was sizes file passed?
 		if(!sizes_store){
 			grunt.fail.fatal("sizes file was not passed, please specify it.");
@@ -26,10 +27,8 @@ module.exports = function (grunt) {
 				statFile(abspath, sizes_data, sizes_store);
 			});
 		}
-		else{
-			if(sma){
-				calcSMA(sizes_data);
-			}
+		else if(sma){
+			calcSMA(sma, sizes_data, sma_key);
 		}
 	});
 	
@@ -68,15 +67,28 @@ module.exports = function (grunt) {
 		if(sizes_data[path.extname(file_path).replace('.','')][path.basename(file_path)] === undefined){
 			sizes_data[path.extname(file_path).replace('.','')][path.basename(file_path)] = [];
 		}
-		var time_obj = {};
-		time_obj[time] = size;
+		var time_obj = {
+			date: time,
+			size: size
+		};
 		grunt.log.writeln(file_path + " .... " + size + "b");
 		
 		sizes_data[path.extname(file_path).replace('.','')][path.basename(file_path)].push(time_obj);
 		fs.writeFileSync(sizes_file_path, JSON.stringify(sizes_data), 'utf8');
 	}
-	function calcSMA(sizes_data){
-		return sizes_data;
+	function calcSMA(sma, sizes_data, key){
+		sizes_data = sizes_data[key];
+	
+		// loop each file
+		for (var key in sizes_data) {
+			var sizes_arr = sizes_data[key];
+			// loop through timeseries data
+			var sizes_tot = 0;
+			for(var i = sizes_arr.length-1; i >= sizes_arr.length-sma; i--){
+				sizes_tot += sizes_arr[i].size;
+			grunt.log.writeln(sizes_arr[i].size);
+			}
+			grunt.log.writeln(sizes_tot/sma);
+		}
 	}
-
 };
