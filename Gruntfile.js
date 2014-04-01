@@ -18,10 +18,11 @@ module.exports = function(grunt) {
     nodeunit: {
       tests: ['test/*_test.js']
     },
-    tape: {
+    beaker: {
       js: {
         src: 'tasks/',
         options: {
+					collectData: true,
 					version: 'version.json'
         }
       }
@@ -30,7 +31,7 @@ module.exports = function(grunt) {
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-tape');
+  grunt.loadNpmTasks('grunt-beaker');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
 

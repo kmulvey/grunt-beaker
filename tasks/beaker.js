@@ -3,7 +3,7 @@
 var path = require('path'), fs = require('fs');
 
 module.exports = function (grunt) {
-	grunt.registerMultiTask('tape', 'Keep track of file sizes', function () {
+	grunt.registerMultiTask('beaker', 'Measure your file size', function () {
 		var src = this.data.src;
 		var options = this.options();
 		var sizes_store = options.version;
