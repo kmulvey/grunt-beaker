@@ -4,7 +4,7 @@
 Grunt Beaker
 ==========
 
-Measuring tape for your code.
+Measure your file size and keep track of them over time.
 
 
 ### Why?
