@@ -9,17 +9,17 @@ Measure your file size and keep track of them over time.
 
 ### Why?
 
-Over time you add more features, fix the bugs and generally add more code.  Understanding where all the growth is happening is important for maintaining your project. Grunt beaker maintains a json file with the date and filesize of files you tell it about and over time you can graph this data to see trends or to compare files against each other. 
+Over time you add more features, fix the bugs and generally add more code.  Understanding where all the growth is happening is important for maintaining your project. Grunt beaker maintains a json file with the date and size of files you tell it about and over time you can graph this data to see trends or to compare files against each other. 
 
 ### Modes
 
 
 #### Collect mode:
-Collect mode recursively searches the file descriptor you supply looking for files and retrieves the mtime and size of each file.  The data is organized by file type, file, data as below.
+Collect mode recursively searches the path you supply looking for files and retrieves the mtime and size of each file.  The data is organized by file type, file and data as below.
 
 ```
-file_ext/
-├── file_name/
+file_ext
+├── file_name
 │   ├── [{date: d, size: s}, {date: d, size: s}] 
 ```
 
@@ -40,14 +40,14 @@ module.exports = function(grunt) {
         src: 'tasks/',
         options: {
 			collectData: true,
-			version: 'beaker.json'
+			dataStore: 'beaker.json'
         }
       },
       calc: {
         options: {
 		    sma: 5,
 			key: 'js',
-			version: 'beaker.json'
+			dataStore: 'beaker.json'
         }
       }
     }
@@ -63,16 +63,21 @@ module.exports = function(grunt) {
 
 ```
 {
-    "css": {
-        "bootstrap-override.css": [
+    "js": {
+        "beaker.js": [
             {
-                "1396357776000": 4632
-            }
-        ],
-        "implementation.css": [
+                "date": 1396392961000,
+                "size": 2631
+            },
             {
-                "1396357776000": 13742
-            }
+                "date": 1396393174000,
+                "size": 2653
+            },
+            {
+                "date": 1396393220000,
+                "size": 2679
+            },
+            
         ]
     }
 }
