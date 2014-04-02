@@ -1,18 +1,18 @@
 {
-  "name": "grunt-tape",
+  "name": "grunt-beaker",
   "description": "Keep track of file sizes over time to help prevent page bloat.",
   "version": "0.0.1",
-  "homepage": "https://github.com/kmulvey/grunt-tape",
+  "homepage": "https://github.com/kmulvey/grunt-beaker",
   "author": {
     "name": "Shutterstock Inc. - Kevin Mulvey",
     "url": "http://code.shutterstock.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:kmulvey/grunt-tape.git"
+    "url": "git@github.com:kmulvey/grunt-beaker.git"
   },
   "bugs": {
-    "url": "https://github.com/kmulvey/grunt-tape/issues"
+    "url": "https://github.com/kmulvey/grunt-beaker/issues"
   },
   "licenses": [
     {
@@ -23,7 +23,7 @@
   "main": "Gruntfile.js",
   "devDependencies": {
     "grunt": "",
-		"grunt-contrib-jshint": "",
+	"grunt-contrib-jshint": "",
   	"grunt-contrib-nodeunit": ""
 	},
   "peerDependencies": {
