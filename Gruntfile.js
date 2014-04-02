@@ -27,7 +27,6 @@ module.exports = function(grunt) {
         }
       },
       calc: {
-        src: 'tasks/',
         options: {
 					sma: 5,
 					key: 'js',
