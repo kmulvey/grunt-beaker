@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('beaker', 'Measure your file size', function () {
 		var src = this.data.src;
 		var options = this.options();
-		var sizes_store = options.version;
+		var sizes_store = options.dataStore;
 		var collect_data = options.collectData;
 		var sma = options.sma;
 		var sma_key = options.key;
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
 	});
 	
 	function parseSizesFile (sizes_store){
-		// check if version file exists
+		// check if dataStore file exists
 		if(!grunt.file.exists(sizes_store)){
 			grunt.fail.fatal("sizes file does not exist, please create an empty file.");
 		}

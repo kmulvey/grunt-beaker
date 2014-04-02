@@ -23,14 +23,14 @@ module.exports = function(grunt) {
         src: 'tasks/',
         options: {
 					collectData: true,
-					version: 'version.json'
+					dataStore: 'beaker.json'
         }
       },
       calc: {
         options: {
 					sma: 5,
 					key: 'js',
-					version: 'version.json'
+					dataStore: 'beaker.json'
         }
       }
     }
