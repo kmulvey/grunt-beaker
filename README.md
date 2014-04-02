@@ -14,7 +14,15 @@ Over time you add more features, fix the bugs and generally add more code.  Unde
 ### Modes
 
 
-Collect mode 
+#### Collect mode:
+Collect mode recursily searches the file deescriptor you supply looking for files and retrieves the mtime and size of each file.  The data is organized by file type, file, data as below.
+
+```
+file_ext/
+├── file_name/
+│   ├── [{date: d, size: s}, {date: d, size: s}] 
+```
+
 
 Sample config:
 
