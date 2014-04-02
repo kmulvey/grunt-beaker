@@ -23,7 +23,7 @@ file_ext/
 │   ├── [{date: d, size: s}, {date: d, size: s}] 
 ```
 
-The data object collects mtime
+The data object collects mtime at millisecond resolution from getTime() and size in bytes.
 
 
 Sample config:
