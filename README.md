@@ -63,16 +63,21 @@ module.exports = function(grunt) {
 
 ```
 {
-    "css": {
-        "bootstrap-override.css": [
+    "js": {
+        "beaker.js": [
             {
-                "1396357776000": 4632
-            }
-        ],
-        "implementation.css": [
+                "date": 1396392961000,
+                "size": 2631
+            },
             {
-                "1396357776000": 13742
-            }
+                "date": 1396393174000,
+                "size": 2653
+            },
+            {
+                "date": 1396393220000,
+                "size": 2679
+            },
+            
         ]
     }
 }
