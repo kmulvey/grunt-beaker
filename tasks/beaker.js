@@ -52,7 +52,7 @@ module.exports = function (grunt) {
 	
 	// return the mtime and sizefor file
 	function statFile(path, sizes_data, sizes_file_path){
-		writeFileData(path, new Date(fs.statSync(path).mtime).getTime(), fs.statSync(path).size, sizes_data, sizes_file_path);
+		writeFileData(path, fs.statSync(path).mtime.getTime(), fs.statSync(path).size, sizes_data, sizes_file_path);
 	}
 	
 	// create the correct data structure and write it to the file
