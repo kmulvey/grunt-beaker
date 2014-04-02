@@ -15,7 +15,7 @@ Over time you add more features, fix the bugs and generally add more code.  Unde
 
 
 #### Collect mode:
-Collect mode recursively searches the path you supply looking for files and retrieves the mtime and size of each file.  The data is organized by file type, file, and data as below.
+Collect mode recursively searches the path you supply looking for files and retrieves the mtime and size of each file.  The data is organized by file type, file and data as below.
 
 ```
 file_ext/
