@@ -26,7 +26,7 @@ file_ext/
 The data object collects mtime at millisecond resolution from getTime() and size in bytes.
 
 
-Sample config:
+#### Sample config:
 
 ```
 'use strict';
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 
 
 
-Sample JSON output:
+#### Sample JSON output:
 
 ```
 {
