@@ -87,7 +87,7 @@ module.exports = function (grunt) {
 			for(var i = sizes_arr.length-1; i >= sizes_arr.length-sma; i--){
 				sizes_tot += sizes_arr[i].size;
 			}
-			grunt.log.writeln(key + ': ' + sizes_tot/sma);
+			grunt.log.writeln(sma + ' version moving average for ' + key + ': ' + sizes_tot/sma + 'b');
 		}
 	}
 };
