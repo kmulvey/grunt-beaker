@@ -1,7 +1,7 @@
 {
   "name": "grunt-beaker",
   "description": "Keep track of file sizes over time to help prevent page bloat.",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/kmulvey/grunt-beaker",
   "author": {
     "name": "Shutterstock Inc. - Kevin Mulvey",
@@ -22,9 +22,9 @@
   ],
   "main": "Gruntfile.js",
   "devDependencies": {
-    "grunt": "",
-	"grunt-contrib-jshint": "",
-  	"grunt-contrib-nodeunit": ""
+		"grunt": "",
+		"grunt-contrib-jshint": "",
+		"grunt-contrib-nodeunit": ""
 	},
   "peerDependencies": {
     "grunt": "~0.4.0"
