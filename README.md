@@ -11,11 +11,8 @@ Measure your file size and keep track of them over time.
 
 Over time you add more features, fix the bugs and generally add more code.  Understanding where all the growth is happening is important for maintaining your project. Grunt beaker maintains a json file with the date and size of files you tell it about and over time you can graph this data to see trends or to compare files against each other. 
 
-### Modes
-
-
-#### Collect mode:
-Collect mode recursively searches the path you supply looking for files and retrieves the mtime and size of each file.  The data is organized by file type, file and data as below.
+#### Collection:
+Beaker recursively searches the path you supply looking for files and retrieves the mtime and size of each file.  The data is organized by file type, file and data as below. The data object collects mtime at millisecond resolution from getTime() and size in bytes. If mtime does not change from run to run, it will not record a new data point. This is to prevent unnecessary stagnation in your graphs.
 
 ```
 file_ext
@@ -23,7 +20,6 @@ file_ext
 │   ├── [{date: d, size: s}, {date: d, size: s}] 
 ```
 
-The data object collects mtime at millisecond resolution from getTime() and size in bytes.
 
 
 #### Sample config:
