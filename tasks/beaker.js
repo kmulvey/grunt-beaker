@@ -21,15 +21,10 @@ module.exports = function (grunt) {
 			sizes_data = parseSizesFile(sizes_store);
 		}
 		
-		if(collect_data){
-			// recursively find files to process
-			grunt.file.recurse(src, function(abspath) {
-				statFile(abspath, sizes_data, sizes_store);
-			});
-		}
-		else if(sma){
-			calcSMA(sma, sizes_data, sma_key);
-		}
+		// recursively find files to process
+		grunt.file.recurse(src, function(abspath) {
+			statFile(abspath, sizes_data, sizes_store);
+		});
 	});
 	
 	function parseSizesFile (sizes_store){
@@ -75,19 +70,5 @@ module.exports = function (grunt) {
 		
 		sizes_data[path.extname(file_path).replace('.','')][path.basename(file_path)].push(time_obj);
 		fs.writeFileSync(sizes_file_path, JSON.stringify(sizes_data), 'utf8');
-	}
-	function calcSMA(sma, sizes_data, type_key){
-		sizes_data = sizes_data[type_key];
-	
-		// loop each file
-		for (var key in sizes_data) {
-			var sizes_arr = sizes_data[key];
-			// loop through timeseries data
-			var sizes_tot = 0;
-			for(var i = sizes_arr.length-1; i >= sizes_arr.length-sma; i--){
-				sizes_tot += sizes_arr[i].size;
-			}
-			grunt.log.writeln(sma + ' version moving average for ' + key + ': ' + sizes_tot/sma + 'b');
-		}
 	}
 };
