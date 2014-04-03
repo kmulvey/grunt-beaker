@@ -7,9 +7,6 @@ module.exports = function (grunt) {
 		var src = this.data.src;
 		var options = this.options();
 		var sizes_store = options.dataStore;
-		var collect_data = options.collectData;
-		var sma = options.sma;
-		var sma_key = options.key;
 		
 		var sizes_data = null;
 		
