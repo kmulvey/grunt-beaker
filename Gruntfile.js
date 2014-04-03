@@ -25,16 +25,8 @@ module.exports = function(grunt) {
 					collectData: true,
 					dataStore: 'beaker.json'
         }
-      },
-      calc: {
-        options: {
-					sma: 5,
-					key: 'js',
-					dataStore: 'beaker.json'
-        }
       }
     }
-
   });
 
   // These plugins provide necessary tasks.
