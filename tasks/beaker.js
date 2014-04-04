@@ -49,15 +49,17 @@ module.exports = function (grunt) {
 	
 	// create the correct data structure and write it to the file
 	function writeFileData(file_path, time, size, sizes_data, sizes_file_path){
-		
+		var file_ext = path.extname(file_path).replace('.','');
+		var file_name = path.basename(file_path);
+
 		// create file type object if it doesnt exist
-		if(sizes_data[path.extname(file_path).replace('.','')] === undefined){
-			sizes_data[path.extname(file_path).replace('.','')] = {};
+		if(sizes_data[file_ext] === undefined){
+			sizes_data[file_ext] = {};
 		}
 		
 		// create file array
-		if(sizes_data[path.extname(file_path).replace('.','')][path.basename(file_path)] === undefined){
-			sizes_data[path.extname(file_path).replace('.','')][path.basename(file_path)] = [];
+		if(sizes_data[file_ext][file_name] === undefined){
+			sizes_data[file_ext][file_name] = [];
 		}
 		var time_obj = {
 			date: time,
@@ -65,7 +67,7 @@ module.exports = function (grunt) {
 		};
 		grunt.log.writeln(file_path + " .... " + size + "b");
 		
-		sizes_data[path.extname(file_path).replace('.','')][path.basename(file_path)].push(time_obj);
+		sizes_data[file_ext][file_name].push(time_obj);
 		fs.writeFileSync(sizes_file_path, JSON.stringify(sizes_data), 'utf8');
 	}
 };
