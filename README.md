@@ -38,13 +38,6 @@ module.exports = function(grunt) {
 			collectData: true,
 			dataStore: 'beaker.json'
         }
-      },
-      calc: {
-        options: {
-		    sma: 5,
-			key: 'js',
-			dataStore: 'beaker.json'
-        }
       }
     }
   });
@@ -72,7 +65,7 @@ module.exports = function(grunt) {
             {
                 "date": 1396393220000,
                 "size": 2679
-            },
+            }
             
         ]
     }
