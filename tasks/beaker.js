@@ -22,8 +22,10 @@ module.exports = function (grunt) {
 		
 		// recursively find files to process
 		grunt.file.recurse(src, function(path) {
-			writeFileData(path, fs.statSync(path).mtime.getTime(), fs.statSync(path).size);
+			addToDataObject(path, fs.statSync(path).mtime.getTime(), fs.statSync(path).size);
 		});
+
+		fs.writeFileSync(sizes_store, JSON.stringify(sizes_data), 'utf8');
 	});
 	
 	function parseSizesFile (){
@@ -45,7 +47,7 @@ module.exports = function (grunt) {
 	}
 
 	// create the correct data structure and write it to the file
-	function writeFileData(file_path, time, size){
+	function addToDataObject(file_path, time, size){
 		var file_ext = path.extname(file_path).replace('.','');
 		var file_name = path.basename(file_path);
 
@@ -65,7 +67,5 @@ module.exports = function (grunt) {
 			date: time,
 			size: size
 		});
-
-		fs.writeFileSync(sizes_store, JSON.stringify(sizes_data), 'utf8');
 	}
 };
