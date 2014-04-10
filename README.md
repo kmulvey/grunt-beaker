@@ -32,12 +32,18 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     beaker: {
-      js: {
-        src: 'tasks/',
-        options: {
-          dataStore: 'beaker.json'
-        }
-      }
+		  css: {
+		    src: ['docs/assets/css/', 'docs-assets/css', 'dist/css'],
+		      options: {
+		        dataStore: 'beaker.json'
+		      }   
+		  },
+		  js: {
+		    src: ['docs/assets/js/', 'docs-assets/js', 'dist/js'],
+		    options: {
+		      dataStore: 'beaker.json'
+		    }
+		  }
     }
   });
   grunt.loadNpmTasks('grunt-beaker');
