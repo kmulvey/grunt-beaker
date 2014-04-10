@@ -4,7 +4,6 @@ var path = require('path'), fs = require('fs');
 
 module.exports = function (grunt) {
 	grunt.registerMultiTask('beaker', 'Measure your file size', function () {
-		var src = this.data.src;
 		var options = this.options();
 		var sizes_store = options.dataStore;
 		
@@ -19,8 +18,10 @@ module.exports = function (grunt) {
 		}
 		
 		// recursively find files to process
-		grunt.file.recurse(src, function(abspath) {
-			statFile(abspath, sizes_data, sizes_store);
+		this.filesSrc.forEach(function(filepath) {
+			grunt.file.recurse(filepath, function(abspath) {
+				statFile(abspath, sizes_data, sizes_store);
+			});
 		});
 	});
 	
