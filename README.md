@@ -35,7 +35,6 @@ module.exports = function(grunt) {
       js: {
         src: 'tasks/',
         options: {
-			collectData: true,
 			dataStore: 'beaker.json'
         }
       }
