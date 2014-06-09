@@ -39,7 +39,7 @@
     "grunt",
     "gruntplugin",
     "measure",
-		"beaker"
+    "beaker"
   ],
   "contributors": [
     {
