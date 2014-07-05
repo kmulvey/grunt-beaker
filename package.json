@@ -14,12 +14,10 @@
   "bugs": {
     "url": "https://github.com/kmulvey/grunt-beaker/issues"
   },
-  "licenses": [
-    {
-      "type": "Apache v2",
-      "url": "http://www.apache.org/licenses/"
-    }
-  ],
+  "licenses": [{
+		"type": "Apache v2",
+		"url": "http://www.apache.org/licenses/"
+  }],
   "main": "Gruntfile.js",
   "devDependencies": {
 		"grunt": "",
