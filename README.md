@@ -32,7 +32,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     beaker: {
-		  css: {
+      css: {
 		    src: ['docs/assets/css/', 'docs-assets/css', 'dist/css'],
 		      options: {
 		        dataStore: 'beaker.json'
