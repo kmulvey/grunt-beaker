@@ -4,7 +4,7 @@
     "devel"         : false,    // Allow developments statements e.g. `console.log();`.
     
     // Settings
-    "passfail"      : false,  // Stop on first error.
+    "passfail"      : false,    // Stop on first error.
     "maxerr"        : 100,    // Maximum error before stopping.
     
     // Predefined globals whom JSHint will ignore.
