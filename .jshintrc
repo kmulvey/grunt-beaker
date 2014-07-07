@@ -1,7 +1,7 @@
 {
     // Development.
-    "debug"         : false, 	// Allow debugger statements e.g. browser breakpoints.
-    "devel"         : false,  // Allow developments statements e.g. `console.log();`.
+    "debug"         : false,    // Allow debugger statements e.g. browser breakpoints.
+    "devel"         : false,    // Allow developments statements e.g. `console.log();`.
     
     // Settings
     "passfail"      : false,  // Stop on first error.
