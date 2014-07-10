@@ -12,7 +12,7 @@
     "node"          : true,
     "rhino"         : false,
     "couch"         : false,
-    "wsh"           : false,  // Windows Scripting Host.
+    "wsh"           : false,    // Windows Scripting Host.
     "jquery"        : false,
     "prototypejs"   : false,
     "mootools"      : false,
