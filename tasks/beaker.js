@@ -28,7 +28,7 @@ module.exports = function (grunt) {
 	function parseSizesFile (sizes_store){
 		// check if dataStore file exists
 		if(!grunt.file.exists(sizes_store)){
-			grunt.fail.fatal("sizes file does not exist, please create an empty file.");
+			file.writeFileSync(sizes_storw, "{}");
 		}
 		
 		var data = fs.readFileSync(sizes_store, 'utf8');
