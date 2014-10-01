@@ -28,6 +28,7 @@ module.exports = function (grunt) {
 	function parseSizesFile (sizes_store){
 		// check if dataStore file exists
 		if(!grunt.file.exists(sizes_store)){
+			// this is stupid as we cant catch errors on write
 			file.writeFileSync(sizes_storw, "{}");
 		}
 		
