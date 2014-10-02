@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 		// check if dataStore file exists
 		if(!grunt.file.exists(sizes_store)){
 			// this is stupid as we cant catch errors on write
-			file.writeFileSync(sizes_storw, "{}");
+			file.writeFileSync(sizes_store, "{}");
 		}
 		
 		var data = fs.readFileSync(sizes_store, 'utf8');
